@@ -1,0 +1,106 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@carolinem15 
+carolinem15
+/
+FirstProject
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+FirstProject/index.html
+@tedwar52
+tedwar52 test
+Latest commit e4a4fd3 2 days ago
+ History
+ 1 contributor
+63 lines (55 sloc)  2.23 KB
+  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>It's Raining Playlists</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+  </head>
+  <body>
+      <header class=container>
+          <h1>It's Raining Playlists</h1>
+      </header>
+      <nav></nav>
+      <div class=container>
+          <div class=main>
+            <form action="/action_page.php">
+                <label for="genres">Genres (up to 3):</label>
+                <input type="text" id="genre1 picsearch" name="genres"><br><br>
+                <input type="text" id="genre2" name="genres"><br><br>
+                <input type="text" id="genre3" name="genres"><br><br>
+                <label for="years">Years Released (up to 3):</label>
+                <input type="text" id="year1" name="years"><br><br>
+                <input type="text" id="year2" name="years"><br><br>
+                <input type="text" id="year3" name="years"><br><br>
+                <label for="artists">Artists (up to 3):</label>
+                <input type="text" id="artist1" name="artists"><br><br>
+                <input type="text" id="artist2" name="artists"><br><br>
+                <input type="text" id="artist3" name="artists"><br><br>
+              </form>
+              <button id=create>Create Playlist</button>
+          </div>
+      </div>
+
+
+      <script type=text/javascript>
+    $(document).ready(function(){
+        $("#create").click(function(){
+            alert("submit search");
+            //ON CLICK API SEARCH FUNCTION
+            var picture = ""
+          
+            $("#picsearch").each(function(){
+              
+              $("#picsearch").val(this);
+              picture = $(this).val();
+              console.log(picture)
+            })
+            //var pictureURL = "https://api.pexels.com/v1/searh?query="+"#picture"
+        });
+        
+      
+    })
+
+
+/// API key for pexel 563492ad6f917000010000011efeea7f897441ed84fcbfd27ceb6a18 --- one of links in footer for pexels MUST be linked in website
+    </script>
+      <footer>
+        <a href="https://www.pexels.com">
+          <img src="https://images.pexels.com/lib/api/pexels.png" />
+        </a>
+        <a href="https://www.pexels.com">Photos provided by Pexels</a>
+      </footer>
+  </body>
+</html>
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
