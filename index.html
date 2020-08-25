@@ -14,17 +14,17 @@
           <div class=main>
             <form action="/action_page.php">
                 <label for="genres">Genres (up to 3):</label><br><br>
-                <input type="text" id="genre1 picsearch" name="genres"><br><br>
-                <input type="text" id="genre2" name="genres"><br><br>
-                <input type="text" id="genre3" name="genres"><br><br>
+                <input type="text" id="picsearch" name="genres" value="" class="genres"><br><br>
+                <input type="text" id="genre2" name="genres" class="genres" value=""><br><br>
+                <input type="text" id="genre3" name="genres" class="genres" value=""><br><br>
                 <label for="years">Years Released (up to 3):</label><br><br>
-                <input type="text" id="year1" name="years"><br><br>
-                <input type="text" id="year2" name="years"><br><br>
-                <input type="text" id="year3" name="years"><br><br>
+                <input type="text" id="year1" name="years" value="" class="years"><br><br>
+                <input type="text" id="year2" name="years" class="years" value=""><br><br>
+                <input type="text" id="year3" name="years" class="years" value=""><br><br>
                 <label for="artists">Artists (up to 3):</label><br><br>
-                <input type="text" id="artist1" name="artists"><br><br>
-                <input type="text" id="artist2" name="artists"><br><br>
-                <input type="text" id="artist3" name="artists"><br><br>
+                <input type="text" id="artist1" name="artists" class="artists" value=""><br><br>
+                <input type="text" id="artist2" name="artists" class="artists" value=""><br><br>
+                <input type="text" id="artist3" name="artists" class="artists" value=""><br><br>
               </form>
               <button id=create>Create Playlist</button>
           </div>
@@ -32,23 +32,50 @@
 
 
       <script type=text/javascript>
+     
     $(document).ready(function(){
+       var input = "";
+       //import {createClient} from "pexels";
+     //const client = createClient("563492ad6f917000010000011efeea7f897441ed84fcbfd27ceb6a18");
+      
+       
         $("#create").click(function(){
             alert("submit search");
             //ON CLICK API SEARCH FUNCTION
-            var picture = ""
-          
-            $("#picsearch").each(function(){
-              
-              $("#picsearch").val(this);
-              picture = $(this).val();
-              console.log(picture)
+           
+            $("#picsearch").each(function () {
+             $("#picsearch").text($(this).text());
+              picture = $("#picsearch").val();
+              console.log(picture);
+            });
+            $(".genres").each(function(){
+              $(".genres").text($(this).text());
+              genres = $(".genres").val();
+              console.log(genres);
             })
-            //var pictureURL = "https://api.pexels.com/v1/searh?query="+"#picture"
+            $(".years").each(function () {
+              $(".years").text($(this).text());
+              years = $(".years").val();
+              console.log(years);
+            });
+            $(".artists").each(function (){
+              $(".artists").text($(this).text());
+              artists = $(".artists").val();
+              console.log(artists);
+            });
+            //AS OF NOW ONLY FIRST INPUT OF EACH TYPE WILL BE CONSOLE LOGGED
+
+        
+            })
+           
+
         });
+
+        //var pexel = "https://api.pexels.com/v1/searh?query=";
+           
         
       
-    })
+
 
 
 /// API key for pexel 563492ad6f917000010000011efeea7f897441ed84fcbfd27ceb6a18 --- one of links in footer for pexels MUST be linked in website
