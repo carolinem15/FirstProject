@@ -55,5 +55,30 @@ You are required to submit the following:
 
 * The URL of the GitHub repository
 
+## Practice User Story
+
+As a music lover
+I want to give the website certain search parameters (like genre, or artist)
+So that I am given a curated playlist based off those parameters.
+
+## APIs to be used
+-Discogs-
+-Tastedive
+-Spotify
+----we need a music database for searching
+-may be a secondary database to generate a picture
+-flickr
+-pexels
+
+user will enter parameters for search criteria, limit 3-5 optional parameters
+separate boxes for each input
+genre(s):
+year(s):
+artist inspirations (up to 3):
+*playlist length (default 20):
+
+user flow:
+1. user objective: create a unique playlist
+
 
 
