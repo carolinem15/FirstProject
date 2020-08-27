@@ -37,6 +37,7 @@ Latest commit e4a4fd3 2 days ago
     <title>It's Raining Playlists</title>
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     <style>
         .flex-container {
             display: flex;
@@ -143,6 +144,19 @@ Latest commit e4a4fd3 2 days ago
                 <input type="text" id="artist3" name="artists"><br><br>
             </div>
         </form>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url: "http://ws.audioscrobbler.com/2.0/",
+                type: "GET",
+                success: function(result) {
+                    console.log(result);
+                }
+                error: function(error) {
+                    console.log(error);
+                }
+            } )
+    </script>
     <br>
     <br>
         <button class="button is-success is-rounded create">Create playlist</button>
