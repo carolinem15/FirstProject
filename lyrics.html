@@ -27,8 +27,8 @@
         }
 
         .button {
-            padding: 10px 24px;
-            width: 10%;
+            padding: 5px;
+            width: 30%;
             transition-duration: 0.4s;
         }
 
@@ -44,6 +44,9 @@
         <div class="navbar-brand">
             <a class="navbar-item" href="index.html">
                 Create playlist
+            </a>
+            <a class="navbar-item" href="lyrics.html">
+                Look up lyrics
             </a>
             <a class="navbar-item" href="aboutus.html">
                 About us
@@ -84,25 +87,17 @@
         });
     </script>
 </div>
-
-    <div class="card">
-        <div class="card-header">
-            <p class="title">Lyric search</p>
-        </div>
         <div class="card-content">
             <form role="form">
                 <div class="card">
                     <div class="card-header">
-                        <div class="form-group">
-                    <label for="lyrics" class="lyricSearch">Lyric search:</label>
+                    <label for="lyrics" class="title">Enter song name:</label>
                     </div>
-                    <input type="text" id="lyrics" name="lyrics"><br><br>
+                    <input type="text" id="lyrics" name="lyrics">
                 </div>
-            </div>
             </form>
             <button class="button is-success is-rounded create" id="lyricsBtn">Show lyrics</button>
         </div>
-    </div>
 </body>
 
 </html>
