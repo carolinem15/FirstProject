@@ -74,10 +74,13 @@ Latest commit e4a4fd3 2 days ago
         <a class="navbar-item" href="index.html">
             Create playlist
         </a>
+        <a class="navbar-item" href="lyrics.html">
+            Look up lyrics
+        </a>
         <a class="navbar-item" href="aboutus.html">
             About us
         </a>
-
+        
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -122,54 +125,30 @@ Latest commit e4a4fd3 2 days ago
         <form role="form">
             <div class="card">
                 <div class="card-header">
-                    <div class="form-group">
-                <label for="genres" class="listGenres">Genre:</label>
-                  </div>
-                <input type="text" id="genre" name="genres"><br><br>
-            </div>
+                    <label for="genres" class="title">Genre:</label>
+                </div>
+                <input type="text" id="genre" name="genres">
             </div>
             <div class="card">
                 <div class="card-header">
-                    <div class="form-group">
-                        <label for="start-year">Start Year (Optional):</label>
-                        <input type="text" class="form-control" id="start-year">
-                      </div>
-                      <div class="form-group">
-                        <label for="end-year">End Year (Optional):</label>
-                        <input type="text" class="form-control" id="end-year">
-                      </div>
+                    <label for="start-year" class="title">Start Year (Optional):</label>
+                </div>
+                <input type="text" class="form-control" id="start-year">
+                <div class="card-header">
+                    <label for="end-year" class="title">End Year (Optional):</label>
+                </div>
+                <input type="text" class="form-control" id="end-year">
+            </div>
             <div class="card">
                 <div class="card-header">
-                    <div class="form-group">
-                <label for="artists" class="title">Artists (up to 3):</label>
-            </div>
+                    <label for="artists" class="title">Artists (up to 3):</label>
+                </div>
+                <input type="text" id="artist1" name="artists" class="artists" value="">
+                <input type="text" id="artist2" name="artists" class="artists" value="">
+                <input type="text" id="artist3" name="artists" class="artists" value="">
+                </div>
 
-                <input type="text" id="artist1" name="artists" class="artists" value=""><br><br>
-                <input type="text" id="artist2" name="artists" class="artists" value=""><br><br>
-                <input type="text" id="artist3" name="artists" class="artists" value="" br>
-            </div>
-        </div>
-        
         </form>
-<<<<<<< HEAD
-
-    <br>
-    <br>
-        <button class="button is-success is-rounded create" id="submitBtn">Create playlist</button>
-=======
-        <script>
-            //$(document).ready(function () {
-                //$.ajax({
-                   // url: "http://ws.audioscrobbler.com/2.0/",
-                   // type: "GET",
-                   // success: function (result) {
-                   //     console.log(result);
-                   // }
-               // });
-           // });
-        </script>
->>>>>>> 0df492e821d3d1d73ced9c566710ee93b9b211bf
-
         <br>
         <br>
         <button class="button is-success is-rounded create" id="create">Create playlist</button>
@@ -243,7 +222,7 @@ Latest commit e4a4fd3 2 days ago
                     //the array of data is displayed in console log. need to create a spot for the results to display!
                 });
             });
-        </scrip
+        </script>
 
 
 

@@ -82,29 +82,7 @@ function buildQueryURL() {
             "</strong>"
         );
       }
-  
-      // If the article has a byline, log and append to $articleList
-      var byline = article.byline;
-  
-      if (byline && byline.original) {
-        console.log(byline.original);
-        $articleListItem.append("<h5>" + byline.original + "</h5>");
-      }
-  
-      // Log section, and append to document if exists
-      var section = article.section_name;
-      console.log(article.section_name);
-      if (section) {
-        $articleListItem.append("<h5>Section: " + section + "</h5>");
-      }
-  
-      // Log published date, and append to document if exists
-      var pubDate = article.pub_date;
-      console.log(article.pub_date);
-      if (pubDate) {
-        $articleListItem.append("<h5>" + article.pub_date + "</h5>");
-      }
-  
+
       // Append and log url
       $articleListItem.append("<a href='" + article.web_url + "'>" + article.web_url + "</a>");
       console.log(article.web_url);
@@ -114,16 +92,11 @@ function buildQueryURL() {
     }
   }
   
-  // Function to empty out the articles
-  function clear() {
-    $("#article-section").empty();
-  }
-  
   // CLICK HANDLERS
   // ==========================================================
   
   // .on("click") function associated with the Search Button
-  $("#run-search").on("click", function(event) {
+  $("#submitBtn").on("click", function(event) {
     // This line allows us to take advantage of the HTML "submit" property
     // This way we can hit enter on the keyboard and it registers the search
     // (in addition to clicks). Prevents the page from reloading on form submit.
@@ -142,7 +115,4 @@ function buildQueryURL() {
       method: "GET"
     }).then(updatePage);
   });
-  
-  //  .on("click") function associated with the clear button
-  $("#clear-all").on("click", clear);
   
