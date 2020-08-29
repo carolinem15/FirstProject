@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us" class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>About us</title>
+    <style>
+        #box {
+
+            border: thin solid lightskyblue;
+            box-shadow: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar is-fixed-top has-shadow is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                Create playlist
+            </a>
+            <a class="navbar-item" href="aboutus.html">
+                About us
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+    </nav>
+    <script>
+        // script provided by Bulma
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Get all "navbar-burger" elements
+            var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+
+                // Add a click event on each of them
+                $navbarBurgers.forEach(function ($el) {
+                    $el.addEventListener('click', function () {
+
+                        // Get the target from the "data-target" attribute
+                        var target = $el.dataset.target;
+                        var $target = document.getElementById(target);
+
+                        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                        $el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+
+                    });
+                });
+            }
+
+        });
+    </script>
+</div>
+
+    <div class="card">
+        <div class="card-header">
+            <p class="title">About Us</p>
+        </div>
+        <div class="card-content">
+            <p>
+                Hello! We are students of the UNCC Coding Bootcamp, and this is our project titled "It's Raining
+                Playlists". This text is a placeholder until we can think of something more compelling to type about
+                ourselves.
+            </p>
+            <br>
+            <h3>
+                Find us on social!
+            </h3>
+            <ul style="list-style: none;">
+                <li>
+                    <i class="fa fa-github"></i>
+                    <a href="https://github.com/carolinem15">carolinem15,</a>
+                    <a href="https://github.com/tedwar52">tedwar52</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
