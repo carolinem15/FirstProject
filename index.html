@@ -123,25 +123,25 @@ Latest commit e4a4fd3 2 days ago
                 <div class="card-header">
                 <label for="genres" class="title">Genres (up to 3):</label>
                 </div>
-                <input type="text" id="genre1 picsearch" name="genres"><br><br>
-                <input type="text" id="genre2" name="genres"><br><br>
-                <input type="text" id="genre3" name="genres"><br><br>
+                <input type="text" id="picsearch" name="genres" class="genres" value=""><br><br>
+                <input type="text" id="genre2" name="genres" class="genres" value=""><br><br>
+                <input type="text" id="genre3" name="genres" class="genres" value=""><br><br>
             </div>
             <div class="card">
                 <div class="card-header">
                 <label for="years" class="title">Years Released (up to 3):</label>
             </div>
-                <input type="text" id="year1" name="years"><br><br>
-                <input type="text" id="year2" name="years"><br><br>
-                <input type="text" id="year3" name="years"><br><br>
+                <input type="text" id="year1" name="years" class="years" value=""><br><br>
+                <input type="text" id="year2" name="years" class="years" value=""><br><br>
+                <input type="text" id="year3" name="years" class="years" value=""><br><br>
             </div>
             <div class="card">
                 <div class="card-header">
                 <label for="artists" class="title">Artists (up to 3):</label>
             </div>
-                <input type="text" id="artist1" name="artists"><br><br>
-                <input type="text" id="artist2" name="artists"><br><br>
-                <input type="text" id="artist3" name="artists"><br><br>
+                <input type="text" id="artist1" name="artists" class="artists" value=""><br><br>
+                <input type="text" id="artist2" name="artists" class="artists" value=""><br><br>
+                <input type="text" id="artist3" name="artists" class="artists" value=""br>
             </div>
         </form>
     <script>
@@ -157,6 +157,7 @@ Latest commit e4a4fd3 2 days ago
                 }
             } )
     </script>
+      
     <br>
     <br>
         <button class="button is-success is-rounded create">Create playlist</button>
@@ -164,34 +165,69 @@ Latest commit e4a4fd3 2 days ago
     <br>
     <br>
     </div>
-
-
-    <script type=text/javascript>
-    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+      </script>
+      <script type=text/javascript>
+     
     $(document).ready(function(){
-        $("#create").click(function(){ alert("submit search");
-        //ON CLICK API SEARCH FUNCTION
-        var picture=""
-        $("#picsearch").each(function(){
-        $("#picsearch").val(this);
-        picture=$(this).val();
-        console.log(picture)
-        })
-        //var
-        pictureURL="https://api.pexels.com/v1/searh?query=" +"#picture"
-        });
-        }) /// API key for pexel 563492ad6f917000010000011efeea7f897441ed84fcbfd27ceb6a18 --- one of links in footer for pexels MUST be linked inwebsite
-        </script>
+       var input = "";
+       
+        $("#create").click(function(){
+            alert("submit search");
+           
+            $("#picsearch").each(function () {
+             $("#picsearch").text($(this).text());
+              picture = $("#picsearch").val();
+              console.log(picture);
+            });
+            $(".genres").each(function(){
+              $(".genres").text($(this).text());
+              genre2 = $("#genre2").val();
+              console.log(genre2);
+              genre3 = $("#genre3").val();
+              console.log(genre3);
+            })
+            $(".years").each(function () {
+              $(".years").text($(this).text());
+              year1 = $("#year1").val();
+              console.log(year1);
+              year2 = $("#year2").val();
+              console.log(year2);
+              year3 = $("#year3").val();
+              console.log(year3);
+            });
+            $(".artists").each(function (){
+              $(".artists").text($(this).text());
+              artist1 = $("#artist1").val();
+              console.log(artist1);
+              artist2 = $("#artist2").val();
+              console.log(artist2);
+              artist3 = $("#artist3").val();
+              console.log(artist3);
+            });
+            //why is it console logging each variable 3 times? this will need to be fixed
+
+            var giphy = "https://api.giphy.com/v1/gifs/search?q="
+            var apiKey = "&api_key=PiLL4Mb9FVIRIrm1qyZ3q2rJ9FZnYREK&limit=1"
+            giphyURL = giphy + picture + apiKey
+            
+            $.ajax({
+              url: giphyURL
+              
+            }).then(function(response){
+              console.log(response)
+            })
+         //the array of data is displayed in console log. need to create a spot for the results to display!
+            })
+
+
 
 <br>
 
 <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <a href="https://www.pexels.com">
-            <img src="https://images.pexels.com/lib/api/pexels.png" />
-          </a>
-          <a href="https://www.pexels.com">Photos provided by Pexels</a>
+        
       </p>
     </div>
   </footer>
