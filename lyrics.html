@@ -8,11 +8,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>About us</title>
     <style>
-        #box {
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+        }
 
-            border: thin solid lightskyblue;
-            box-shadow: 5px;
+        #maintitle {
+            text-align: center;
+        }
 
+        .card {
+            width: 30%;
+            padding: 1em;
+        }
+
+        .card-header {
+            padding-bottom: 10px;
+        }
+
+        .button {
+            padding: 10px 24px;
+            width: 10%;
+            transition-duration: 0.4s;
+        }
+
+        .button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
         }
     </style>
 </head>
@@ -79,6 +100,7 @@
                 </div>
             </div>
             </form>
+            <button class="button is-success is-rounded create" id="lyricsBtn">Show lyrics</button>
         </div>
     </div>
 </body>
