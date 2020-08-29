@@ -38,6 +38,7 @@ Latest commit e4a4fd3 2 days ago
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    <script src="script.js"></script>
     <style>
         .flex-container {
             display: flex;
@@ -118,31 +119,37 @@ Latest commit e4a4fd3 2 days ago
         <h1 id="maintitle">It's Raining Playlists</h1>
     </header>
     <div class="flex-container">
-        <form action="/action_page.php">
+        <form role="form">
             <div class="card">
                 <div class="card-header">
-                    <label for="genres" class="title">Genres (up to 3):</label>
-                </div>
-                <input type="text" id="picsearch" name="genres" class="genres" value=""><br><br>
-                <input type="text" id="genre2" name="genres" class="genres" value=""><br><br>
-                <input type="text" id="genre3" name="genres" class="genres" value=""><br><br>
+                    <div class="form-group">
+                <label for="genres" class="listGenres">Genre:</label>
+                  </div>
+                <input type="text" id="genre" name="genres"><br><br>
+            </div>
             </div>
             <div class="card">
                 <div class="card-header">
-                    <label for="years" class="title">Years Released (up to 3):</label>
-                </div>
-                <input type="text" id="year1" name="years" class="years" value=""><br><br>
-                <input type="text" id="year2" name="years" class="years" value=""><br><br>
-                <input type="text" id="year3" name="years" class="years" value=""><br><br>
-            </div>
+                    <div class="form-group">
+                        <label for="start-year">Start Year (Optional):</label>
+                        <input type="text" class="form-control" id="start-year">
+                      </div>
+                      <div class="form-group">
+                        <label for="end-year">End Year (Optional):</label>
+                        <input type="text" class="form-control" id="end-year">
+                      </div>
             <div class="card">
                 <div class="card-header">
-                    <label for="artists" class="title">Artists (up to 3):</label>
-                </div>
+                    <div class="form-group">
+                <label for="artists" class="title">Artists (up to 3):</label>
+            </div>
+
                 <input type="text" id="artist1" name="artists" class="artists" value=""><br><br>
                 <input type="text" id="artist2" name="artists" class="artists" value=""><br><br>
                 <input type="text" id="artist3" name="artists" class="artists" value="" br>
             </div>
+        </div>
+        
         </form>
         <script>
             //$(document).ready(function () {
@@ -229,9 +236,7 @@ Latest commit e4a4fd3 2 days ago
                     //the array of data is displayed in console log. need to create a spot for the results to display!
                 });
             });
-        </script>
-
-
+        </scrip
 
 
 
