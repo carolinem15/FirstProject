@@ -65,53 +65,53 @@ Latest commit e4a4fd3 2 days ago
         }
 
         .button:hover {
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
     </style>
 </head>
-    <nav class="navbar is-fixed-top has-shadow is-primary" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="index.html">
-                Create playlist
-            </a>
-            <a class="navbar-item" href="aboutus.html">
-                About us
-            </a>
+<nav class="navbar is-fixed-top has-shadow is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+            Create playlist
+        </a>
+        <a class="navbar-item" href="aboutus.html">
+            About us
+        </a>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-    </nav>
-    <script>
-        // script provided by Bulma
-        document.addEventListener('DOMContentLoaded', function () {
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+</nav>
+<script>
+    // script provided by Bulma
+    document.addEventListener('DOMContentLoaded', function () {
 
-            // Get all "navbar-burger" elements
-            var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        // Get all "navbar-burger" elements
+        var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-            // Check if there are any navbar burgers
-            if ($navbarBurgers.length > 0) {
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
 
-                // Add a click event on each of them
-                $navbarBurgers.forEach(function ($el) {
-                    $el.addEventListener('click', function () {
+            // Add a click event on each of them
+            $navbarBurgers.forEach(function ($el) {
+                $el.addEventListener('click', function () {
 
-                        // Get the target from the "data-target" attribute
-                        var target = $el.dataset.target;
-                        var $target = document.getElementById(target);
+                    // Get the target from the "data-target" attribute
+                    var target = $el.dataset.target;
+                    var $target = document.getElementById(target);
 
-                        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-                        $el.classList.toggle('is-active');
-                        $target.classList.toggle('is-active');
+                    // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                    $el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
 
-                    });
                 });
-            }
+            });
+        }
 
-        });
-    </script>
+    });
+</script>
 </div>
 
 <body>
@@ -124,7 +124,7 @@ Latest commit e4a4fd3 2 days ago
                 <div class="card-header">
                     <div class="form-group">
                 <label for="genres" class="listGenres">Genre:</label>
-                </div>
+                  </div>
                 <input type="text" id="genre" name="genres"><br><br>
             </div>
             </div>
@@ -143,36 +143,122 @@ Latest commit e4a4fd3 2 days ago
                     <div class="form-group">
                 <label for="artists" class="title">Artists (up to 3):</label>
             </div>
-                <input type="text" id="artist1" name="artists"><br><br>
-                <input type="text" id="artist2" name="artists"><br><br>
-                <input type="text" id="artist3" name="artists"><br><br>
+
+                <input type="text" id="artist1" name="artists" class="artists" value=""><br><br>
+                <input type="text" id="artist2" name="artists" class="artists" value=""><br><br>
+                <input type="text" id="artist3" name="artists" class="artists" value="" br>
             </div>
         </div>
         
         </form>
+<<<<<<< HEAD
 
     <br>
     <br>
         <button class="button is-success is-rounded create" id="submitBtn">Create playlist</button>
+=======
+        <script>
+            //$(document).ready(function () {
+                //$.ajax({
+                   // url: "http://ws.audioscrobbler.com/2.0/",
+                   // type: "GET",
+                   // success: function (result) {
+                   //     console.log(result);
+                   // }
+               // });
+           // });
+        </script>
+>>>>>>> 0df492e821d3d1d73ced9c566710ee93b9b211bf
 
-    <br>
-    <br>
-    </div>
+        <br>
+        <br>
+        <button class="button is-success is-rounded create" id="create">Create playlist</button>
 
-<br>
+        <br>
+        <br>
+        <div class="results">
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var input = "";
+
+                $("#create").click(function () {
+                    alert("submit search");
+
+                    $("#picsearch").each(function () {
+                        $("#picsearch").text($(this).text());
+                        picture = $("#picsearch").val();
+                        console.log(picture);
+                    });
+                    $(".genres").each(function () {
+                        $(".genres").text($(this).text());
+                        genre2 = $("#genre2").val();
+                        console.log(genre2);
+                        genre3 = $("#genre3").val();
+                        console.log(genre3);
+                    })
+                    $(".years").each(function () {
+                        $(".years").text($(this).text());
+                        year1 = $("#year1").val();
+                        console.log(year1);
+                        year2 = $("#year2").val();
+                        console.log(year2);
+                        year3 = $("#year3").val();
+                        console.log(year3);
+                    });
+                    $(".artists").each(function () {
+                        $(".artists").text($(this).text());
+                        artist1 = $("#artist1").val();
+                        console.log(artist1);
+                        artist2 = $("#artist2").val();
+                        console.log(artist2);
+                        artist3 = $("#artist3").val();
+                        console.log(artist3);
+                    });
+                    //why is it console logging each variable 3 times? this will need to be fixed
+
+                    var giphy = "https://api.giphy.com/v1/gifs/search?q="
+                    var apiKey = "&api_key=PiLL4Mb9FVIRIrm1qyZ3q2rJ9FZnYREK&limit=1"
+                    giphyURL = giphy + picture + apiKey
+
+                    $.ajax({
+                        url: giphyURL
+
+                    }).then(function (response) {
+                        console.log(response);
+                        var results = response.data;
+                        for (var i = 0; i < results.length; i++) {
+                            var gifDiv = $("<div>");
+                            var image = $("<img>");
+                            image.attr("src", results[i].images.fixed_height.url);
+                            gifDiv.append(image);
+                            $(".results").prepend(gifDiv);
+                        };
+
+                    });
+                    //the array of data is displayed in console log. need to create a spot for the results to display!
+                });
+            });
+        </scrip
+
+
+
+</body>
 
 <footer class="footer">
     <div class="content has-text-centered">
-      <p>
-        <a href="https://www.pexels.com">
-            <img src="https://images.pexels.com/lib/api/pexels.png" />
-          </a>
-          <a href="https://www.pexels.com">Photos provided by Pexels</a>
-      </p>
+        <p>
+            <img src="giphy.png">
+        </p>
     </div>
-  </footer>
+</footer>
 
-  </body>
+</body>
+
 </html>
 © 2020 GitHub, Inc.
 Terms
