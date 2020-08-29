@@ -1,84 +1,30 @@
-# Project 1
+It's Raining Playlists!
 
-## Application Requirements
+# Description
 
-* Must use at least two server-side APIs
+"It's Raining Playlists!" generates playlists based off of parameters set by the user. Once the parameters are set for the playlist, the application generates songs to fill the playlist based off of the user’s criteria. Parameters include genre, start and end year, and up to 3 artists. Once the playlist is formed, a picture associated with the theme of the playlist is included. 
 
-* Must use a CSS framework _other than_ Bootstrap
+The purpose of this application is to seamlessly incorporate the concepts of web design and development we have learned so far. This project offers an opportunity to work on a project as a group in a way that mimics professional project work. We used GitHub projects to facilitate project discussion and progress.
 
-* Must be interactive (i.e: accept and respond to user input)
+In the future, this application will also enable you to adjust the total length of the playlist, enter a sleep timer for the playlist, and include a shuffle function. 
 
-* Use at least one new third-party API
+## Installation
 
-* Must have a polished UI
+To install our project, click the URL to open the page, and your first stop will be the application homepage. This application has a mobile responsive design and also renders well on tablets.
 
-* Must meet good quality coding standards
+## Usage
 
-* Does not use alerts, confirms or prompts (look into _modals_)
+The main homepage will contain designated fields to enter your playlist criteria. You have the option to enter genre, a date range, and up to 3 artists to inspire your playlist. After you are finished, click the green "create playlist" buttom at the bottom of the page and watch as your playlist is generated underneath the button. In the navigation bar at the top of the page, there is another page available where you can enter a specific song in your playlist into a field and lyrics will display after hitting submit. Additionally, an "about us" page is available in the navigation bar. This page contains information about the developers behind this project. 
 
-* Must be deployed to GitHub Pages
+## Credits
 
-
-## Presentation Requirements
-
-Use this [project presentation template](https://docs.google.com/presentation/d/1_u8TKy5zW5UlrVQVnyDEZ0unGI2tjQPDEpA0FNuBKAw/edit?usp=sharing) to address the following: 
-
-* Elevator pitch: a one minute description of your application
-
-* Concept: What is your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to the deployed application and the GitHub repository
+Trilogy Education Services
+W3 schools: https://www.w3schools.com/default.asp
+FontAwesome: https://fontawesome.com/6?next=%2F
+Stack Overflow: https://stackoverflow.com/
+Bulma: https://bulma.io/
 
 
-## Grading Metrics 
+## License
 
-| Metric        | Weight | 
-| ---           | ---    |
-| Concept       | 10%    |
-| Design        | 20%    |
-| Functionality | 30%    |
-| Collaboration | 30%    |
-| Presentation  | 10%    |
-
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository
-
-## Practice User Story
-
-As a music lover
-I want to give the website certain search parameters (like genre, or artist)
-So that I am given a curated playlist based off those parameters.
-
-## APIs to be used
--Discogs-
--Tastedive
--Spotify
-----we need a music database for searching
--may be a secondary database to generate a picture
--flickr
--pexels
-
-user will enter parameters for search criteria, limit 3-5 optional parameters
-separate boxes for each input
-genre(s):
-year(s):
-artist inspirations (up to 3):
-*playlist length (default 20):
-
-user flow:
-1. user objective: create a unique playlist
-
-
-
+MIT License (https://choosealicense.com)
