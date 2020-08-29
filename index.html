@@ -38,6 +38,7 @@ Latest commit e4a4fd3 2 days ago
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    <script src="script.js"></script>
     <style>
         .flex-container {
             display: flex;
@@ -119,21 +120,27 @@ Latest commit e4a4fd3 2 days ago
     </header>
     <div class="flex-container">
         <form role="form">
-            <div class="form-group">
             <div class="card">
                 <div class="card-header">
+                    <div class="form-group">
                 <label for="genres" class="listGenres">Genre:</label>
                 </div>
-                <input type="text" id="genre picsearch" name="genres"><br><br>
+                <input type="text" id="genre" name="genres"><br><br>
+            </div>
             </div>
             <div class="card">
                 <div class="card-header">
-                <label for="years" class="title">Year Released (Start year):</label>
-            </div>
-                <input type="text" id="startYear" name="years"><br><br>
-            </div>
+                    <div class="form-group">
+                        <label for="start-year">Start Year (Optional):</label>
+                        <input type="text" class="form-control" id="start-year">
+                      </div>
+                      <div class="form-group">
+                        <label for="end-year">End Year (Optional):</label>
+                        <input type="text" class="form-control" id="end-year">
+                      </div>
             <div class="card">
                 <div class="card-header">
+                    <div class="form-group">
                 <label for="artists" class="title">Artists (up to 3):</label>
             </div>
                 <input type="text" id="artist1" name="artists"><br><br>
@@ -141,25 +148,8 @@ Latest commit e4a4fd3 2 days ago
                 <input type="text" id="artist3" name="artists"><br><br>
             </div>
         </div>
+        
         </form>
-    
-    <script>
-    // Last.fm api call here
-        $(document).ready(function(){
-            $("#submitBtn").click(function(){
-                var 
-            })
-            $.ajax({
-                url: "http://ws.audioscrobbler.com/2.0/",
-                type: "POST",
-                success: function(result) {
-                    console.log(result);
-                }
-                error: function(error) {
-                    console.log(error);
-                });
-            });
-    </script>
     <br>
     <br>
         <button class="button is-success is-rounded create" id="submitBtn">Create playlist</button>
