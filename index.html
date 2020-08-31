@@ -38,8 +38,12 @@ Latest commit e4a4fd3 2 days ago
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600&display=swap" rel="stylesheet">
     <script src="script.js"></script>
     <style>
+        body {
+            font-family: 'Montserrat Alternates', sans-serif;
+        }
         .flex-container {
             display: flex;
             flex-direction: column;
@@ -67,9 +71,10 @@ Latest commit e4a4fd3 2 days ago
         .button:hover {
             box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
+
     </style>
 </head>
-<nav class="navbar is-fixed-top has-shadow is-primary" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top has-shadow is-primary is-bold" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="index.html">
             Create playlist
@@ -116,31 +121,41 @@ Latest commit e4a4fd3 2 days ago
     });
 </script>
 </div>
-
 <body>
-    <header class="title">
-        <h1 id="maintitle">It's Raining Playlists</h1>
+    <header class="hero">
+        <div class="hero-body">
+            <div class="container">
+        <h1 class="title">
+            It's Raining Playlists!
+        </h1>
+    </div>
+</div>
     </header>
     <div class="flex-container">
         <form role="form">
-            <div class="card">
-                <div class="card-header">
+            <div class="card is-shadowless">
+                <div class="card-header is-shadowless">
                     <label for="genres" class="title">Genre:</label>
                 </div>
                 <input type="text" id="genre" name="genres" value="">
             </div>
-            <div class="card">
-                <div class="card-header">
+            <div class="card is-shadowless">
+                <div class="card-header is-shadowless">
                     <label for="start-year" class="title">Start Year (Optional):</label>
                 </div>
+                <input type="text" class="form-control" id="start-year">
+            </div>
+            <div class="card is-shadowless">
+                <div class="card-header is-shadowless">
                 <input type="text" class="form-control" id="start-year" value="">
                 <div class="card-header">
                     <label for="end-year" class="title">End Year (Optional):</label>
                 </div>
                 <input type="text" class="form-control" id="end-year" value="">
             </div>
-            <div class="card">
-                <div class="card-header">
+            </div>
+            <div class="card is-shadowless">
+                <div class="card-header is-shadowless">
                     <label for="artists" class="title">Artists (up to 3):</label>
                 </div>
                 <input type="text" id="artist1" name="artists" class="artists" value="">
@@ -151,7 +166,7 @@ Latest commit e4a4fd3 2 days ago
         </form>
         <br>
         <br>
-        <button class="button is-success is-rounded create" id="create">Create playlist</button>
+        <button class="button is-primary is-rounded create" id="create">Create playlist</button>
 
         <br>
         <br>
@@ -161,7 +176,6 @@ Latest commit e4a4fd3 2 days ago
             <div id="response"></div>
         </div>
         <script src="API.js"></script>
-
 
 
 

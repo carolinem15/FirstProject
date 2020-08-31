@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600&display=swap" rel="stylesheet">
     <title>About us</title>
     <style>
+        body {
+            font-family: 'Montserrat Alternates', sans-serif;
+        }
         .flex-container {
             display: flex;
             flex-direction: column;
@@ -40,7 +44,7 @@
 
 <body>
 
-    <nav class="navbar is-fixed-top has-shadow is-primary" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top has-shadow is-primary is-bold" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="index.html">
                 Create playlist
@@ -86,6 +90,54 @@
 
         });
     </script>
+</div>
+        <div class="card-content">
+            <form role="form">
+                <div class="card is-shadowless">
+                    <div class="card-header is-shadowless">
+                    <label for="lyrics" class="title">Enter song name:</label>
+                    </div>
+                    <input type="text" id="lyrics" name="lyrics">
+                    <div id='lyrics-print'></div>
+                </div>
+            </form>
+            <button class="button is-primary is-rounded create" id="lyricsBtn">Show lyrics</button>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        // Code for musixmatch API
+            function searchLyrics() {
+                var APIKey = "4a21c495afdd77ae40034c592a9e294d";
+                var lyrics = $("#lyrics").val()
+                var queryURL = "https://api.musixmatch.com/ws/1.1/" + "matcher.lyrics.get?q_track=" + lyrics + '&apikey=' + APIKey;
+                $.ajax({
+                    type: "GET",
+                    data: {
+                        apikey: APIKey,
+                        q_track: lyrics,
+                        format: "jsonp",
+                        callback: "jsonp_callback"
+                    },
+                    url: "https://api.musixmatch.com/ws/1.1/matcher.lyrics.get",
+                    dataType: "jsonp",
+                    jsonpCallback: 'jsonp_callback',
+                    contentType: 'application/json',
+                    success: function(data) {
+                        var lyricsWords = data.message.body.lyrics.lyrics_body;
+                        var lyricsEl = document.getElementById('lyrics-print')
+                        lyricsEl.innerHTML = ''
+                        lyricsEl.innerHTML = lyricsWords
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(jqXHR);
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                    }
+                });
+            }
+            $('#lyricsBtn').on('click', searchLyrics)
+        </script>
     </div>
     <div class="card-content">
         <form role="form">
