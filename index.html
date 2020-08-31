@@ -80,7 +80,7 @@ Latest commit e4a4fd3 2 days ago
         <a class="navbar-item" href="aboutus.html">
             About us
         </a>
-        
+
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -127,17 +127,17 @@ Latest commit e4a4fd3 2 days ago
                 <div class="card-header">
                     <label for="genres" class="title">Genre:</label>
                 </div>
-                <input type="text" id="genre" name="genres">
+                <input type="text" id="genre" name="genres" value="">
             </div>
             <div class="card">
                 <div class="card-header">
                     <label for="start-year" class="title">Start Year (Optional):</label>
                 </div>
-                <input type="text" class="form-control" id="start-year">
+                <input type="text" class="form-control" id="start-year" value="">
                 <div class="card-header">
                     <label for="end-year" class="title">End Year (Optional):</label>
                 </div>
-                <input type="text" class="form-control" id="end-year">
+                <input type="text" class="form-control" id="end-year" value="">
             </div>
             <div class="card">
                 <div class="card-header">
@@ -146,7 +146,7 @@ Latest commit e4a4fd3 2 days ago
                 <input type="text" id="artist1" name="artists" class="artists" value="">
                 <input type="text" id="artist2" name="artists" class="artists" value="">
                 <input type="text" id="artist3" name="artists" class="artists" value="">
-                </div>
+            </div>
 
         </form>
         <br>
@@ -158,63 +158,8 @@ Latest commit e4a4fd3 2 days ago
         <div class="results">
 
         </div>
+        <script src="API.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-        </script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                var input = "";
-
-                $("#create").click(function () {
-                    alert("submit search");
-
-                    $("#genre").each(function () {
-                        $("#genre").text($(this).text());
-                        picture = $("#genre").val();
-                        console.log(picture);
-                    });
-                    $("#start-year").each(function () {
-                        $("#start-year").text($(this).text());
-                        startYear = $("#start-year").val();
-                        console.log(startYear);
-                    });
-                    $("#end-year").each(function () {
-                        $("#end-year").text($(this).text());
-                        endYear = $("#end-year").val();
-                        console.log(endYear);
-                    })
-                    $(".artists").each(function () {
-                        $(".artists").text($(this).text());
-                        artist1 = $("#artist1").val();
-                        console.log(artist1);
-                        artist2 = $("#artist2").val();
-                        console.log(artist2);
-                        artist3 = $("#artist3").val();
-                        console.log(artist3);
-                    });
-
-                    var giphy = "https://api.giphy.com/v1/gifs/search?q="
-                    var apiKey = "&api_key=PiLL4Mb9FVIRIrm1qyZ3q2rJ9FZnYREK&limit=1"
-                    giphyURL = giphy + genre + apiKey
-
-                    $.ajax({
-                        url: giphyURL
-
-                    }).then(function (response) {
-                        console.log(response);
-                        var results = response.data;
-                        for (var i = 0; i < results.length; i++) {
-                            var gifDiv = $("<div>");
-                            var image = $("<img>");
-                            image.attr("src", results[i].images.fixed_height.url);
-                            gifDiv.append(image);
-                            $(".results").prepend(gifDiv);
-                        };
-
-                    });
-                });
-            });
-        </script>
 
 
 

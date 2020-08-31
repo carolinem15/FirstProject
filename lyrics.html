@@ -33,7 +33,7 @@
         }
 
         .button:hover {
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
     </style>
 </head>
@@ -86,18 +86,40 @@
 
         });
     </script>
-</div>
-        <div class="card-content">
-            <form role="form">
-                <div class="card">
-                    <div class="card-header">
-                    <label for="lyrics" class="title">Enter song name:</label>
-                    </div>
-                    <input type="text" id="lyrics" name="lyrics">
+    </div>
+    <div class="card-content">
+        <form role="form">
+            <div class="card">
+                <div class="card-header">
+                    <label for="lyrics" class="track">Enter song name:</label>
                 </div>
-            </form>
-            <button class="button is-success is-rounded create" id="lyricsBtn">Show lyrics</button>
-        </div>
+                <input type="text" id="track" name="track" value="">
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <label for="lyrics" class="band">Enter artist name:</label>
+                </div>
+                <input type="text" id="band" name="band" value="">
+            </div>
+        </form>
+        <button class="button is-success is-rounded create" id="lyricsBtn">Show lyrics</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var APIKey = "4a21c495afdd77ae40034c592a9e294d";
+        var track = $("#track").val()
+        var band = $("#band").val()
+        var queryURL = "https://api.musixmatch.com/ws/1.1/" + "matcher.lyrics.get?q_track=" + track + "&q_artist=" + band + APIKey;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (response) {
+                console.log(queryURL);
+                console.log(response);
+            });
+    </script>
 </body>
 
 </html>
