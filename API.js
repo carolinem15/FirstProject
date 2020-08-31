@@ -6,8 +6,6 @@ $(document).ready(function () {
   var input = "";
 
   $("#create").click(function () {
-    alert("submit search");
-
     $("#genre").each(function () {
       $("#genre").text($(this).text());
       picture = $("#genre").val();
@@ -47,7 +45,7 @@ $(document).ready(function () {
         var image = $("<img>");
         image.attr("src", results[i].images.fixed_height.url);
         gifDiv.append(image);
-        $(".results").prepend(gifDiv);
+        $("#gifresponse").prepend(gifDiv);
       }
     });
     var base = "http://ws.audioscrobbler.com/2.0/?method=";
@@ -71,19 +69,19 @@ $(document).ready(function () {
       url: artistURL,
     }).then(function (response) {
       console.log(response);
-      var numResults = "5";
-      var musicians = response.similarartists;
-      for (var i = 0; i < musicians.length; i++) {
-        // var artist1Div = $("<div>");
-        //var text = $("<p>");
+      var musicians = response.similarartists.artist;
+      for (var i = 0; i < 3; i++) {
+        var artistDiv = $("<div>");
+        var text = $("<p>");
+        text.text(musicians[i].name);
         //var artistpic1 = $("<img>");
         //text.attr("src", musicians[i].similarartists.artist[0]);
         //artistpic1.attr("src", musicians[i].image[1]);
         //artist1Div.append(artist1pic);
-        //artist1Div.append(text);
-        //$(".results").prepend(artist1Div);
-        var musiciansEL = document.getElementsByClassName(".results");
-        musiciansEL.innerHTML;
+        artistDiv.append(text);
+        $("#response").append(artistDiv);
+        //var musiciansEL = document.getElementsByClassName(".results");
+        //musiciansEL.innerHTML;
       }
     });
 
@@ -92,15 +90,14 @@ $(document).ready(function () {
     }).then(function (response) {
       console.log(response);
       var numResults = "5";
-      var SimGenre = response.track;
-      for (var i = 0; i < SimGenre.length; i++) {
+      var SimGenre = response.track.track.name;
+      for (var i = 0; i < 5; i++) {
         var genre1Div = $("<div>");
         var Gtext = $("<p>");
-        //var artistpic1 = $("<img>");
-        text.attr("src", SimGenre[i].track.name);
+        text.text();
         //artistpic1.attr("src", musicians[i].image[1]);
         //genre1Div.append(artist1pic);
-        genre1Div.append(Gtext);
+        genreDiv.append(Gtext);
         $(".results").prepend(genre1Div);
       }
     });
